@@ -1,0 +1,26 @@
+{
+  "name": "utils",
+  "version": "0.0.1",
+  "description": "evg's js utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyevgeniy/utils.git"
+  },
+  "keywords": [
+    "js-utils",
+    "utils"
+  ],
+  "author": "Evgeny Chaban",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyevgeniy/utils/issues"
+  },
+  "homepage": "https://github.com/cyevgeniy/utils#readme",
+  "devDependencies": {
+    "vitest": "^2.1.2"
+  }
+}
