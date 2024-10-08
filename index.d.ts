@@ -16,3 +16,9 @@ export function last<T>(arr: T[]): T | undefined
  * For all other cases it returns 0
  */
 export function len(v: any[] | string | Map | Set | Record<string, any>): number
+
+/**
+ * Capitalizes the first letter and lowercases all other letters in each
+ * word of the passed string
+ */
+export function initcap(s: string): string
