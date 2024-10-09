@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { initcap } from './strings'
+import { initcap, trimTrailingChar } from './strings'
 
 describe('initcap function', () => {
     test('works with empty strings', () => {
@@ -36,5 +36,31 @@ describe('initcap function', () => {
 
     test('it lowercases', () => {
         expect(initcap('HELLO')).toBe('Hello')
+    })
+})
+
+describe('trimTrailingChar function', () => {
+    test('works with empty strings', () => {
+        expect(trimTrailingChar('', 'a')).toBe('')
+    })
+
+    test('works with strings without matches', () => {
+        expect(trimTrailingChar('hello', 'a')).toBe('hello')
+    })
+
+    test('returns original string if character length is greater than 1', () => {
+        expect(trimTrailingChar('aaaa', 'aa')).toBe('aaaa')
+    })
+
+    test('trims in the middle', () => {
+        expect(trimTrailingChar('Hello   World', ' ')).toBe('Hello World')
+    })
+
+    test('trims at the end', () => {
+        expect(trimTrailingChar('haaa', 'a')).toBe('ha')
+    })
+
+    test('trims the whole string', () => {
+        expect(trimTrailingChar('aaaa', 'a')).toBe('a')
     })
 })
