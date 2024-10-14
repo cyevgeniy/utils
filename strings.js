@@ -13,3 +13,26 @@ export function initcap(s) {
 
     return words.join(' ')
 }
+
+export function trimCharSeq(s, c) {
+    if (c.length !== 1)
+        return s
+
+    let res = ''
+    let dupl = false
+
+    for(let i=0; i < s.length; ++i) {
+        if (s[i] !== c) {
+            dupl = false
+            res += s[i]
+            continue
+        }
+        if (dupl)
+            continue
+        
+        res += s[i]
+        dupl = true  
+    }
+
+    return res
+}
