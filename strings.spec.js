@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { initcap, trimTrailingChar } from './strings'
+import { initcap, trimCharSeq } from './strings'
 
 describe('initcap function', () => {
     test('works with empty strings', () => {
@@ -39,28 +39,28 @@ describe('initcap function', () => {
     })
 })
 
-describe('trimTrailingChar function', () => {
+describe('trimCharSeq function', () => {
     test('works with empty strings', () => {
-        expect(trimTrailingChar('', 'a')).toBe('')
+        expect(trimCharSeq('', 'a')).toBe('')
     })
 
     test('works with strings without matches', () => {
-        expect(trimTrailingChar('hello', 'a')).toBe('hello')
+        expect(trimCharSeq('hello', 'a')).toBe('hello')
     })
 
     test('returns original string if character length is greater than 1', () => {
-        expect(trimTrailingChar('aaaa', 'aa')).toBe('aaaa')
+        expect(trimCharSeq('aaaa', 'aa')).toBe('aaaa')
     })
 
     test('trims in the middle', () => {
-        expect(trimTrailingChar('Hello   World', ' ')).toBe('Hello World')
+        expect(trimCharSeq('Hello   World', ' ')).toBe('Hello World')
     })
 
     test('trims at the end', () => {
-        expect(trimTrailingChar('haaa', 'a')).toBe('ha')
+        expect(trimCharSeq('haaa', 'a')).toBe('ha')
     })
 
     test('trims the whole string', () => {
-        expect(trimTrailingChar('aaaa', 'a')).toBe('a')
+        expect(trimCharSeq('aaaa', 'a')).toBe('a')
     })
 })

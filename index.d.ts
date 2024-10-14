@@ -27,4 +27,4 @@ export function initcap(s: string): string
  * Modifies a string in a such way that the specified char can
  * occur only one time in a row
  */
-export function trimTrailingChar(s: string, c: string): string
+export function trimCharSeq(s: string, c: string): string

@@ -14,7 +14,7 @@ export function initcap(s) {
     return words.join(' ')
 }
 
-export function trimTrailingChar(s, c) {
+export function trimCharSeq(s, c) {
     if (c.length !== 1)
         return s
 
