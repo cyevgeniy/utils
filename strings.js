@@ -36,3 +36,7 @@ export function trimCharSeq(s, c) {
 
     return res
 }
+
+export function mapString(s, fn) {
+    return s.split('').map(fn).join('')
+}

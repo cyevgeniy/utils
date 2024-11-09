@@ -49,9 +49,25 @@ console.log(trimCharSeq('Duuplicates   are remmmmoved'))
 </pre>
 
 
+<h3 id="mapString">mapString</h3>
+<p>
+Returns a string which is populated with results of applying provided callback
+on each character.
+</p>
+
+<pre>
+import { mapString } from 'utils'
+
+// Returns an empty string for even numbers
+let fn = (c) => Number(c) % 2 === 0 ? '' : c
+
+// '135'
+console.log(mapString('12345'))
+</pre>
+
 <h2>Array functions</h2>
 
-<h3 id="initcap">last</h3> 
+<h3 id="last">last</h3> 
 <p>
 Returns the last element in an array. If array is empty, returns <code>undefined</code>.
 </p>

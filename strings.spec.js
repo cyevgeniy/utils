@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { initcap, trimCharSeq } from './strings'
+import { initcap, trimCharSeq, mapString } from './strings'
 
 describe('initcap function', () => {
     test('works with empty strings', () => {
@@ -62,5 +62,22 @@ describe('trimCharSeq function', () => {
 
     test('trims the whole string', () => {
         expect(trimCharSeq('aaaa', 'a')).toBe('a')
+    })
+})
+
+describe('mapString function', () => {
+    test('works with ordinary strings', () => {
+        let res = mapString('abcde', c => '1')
+        expect(res).toBe('11111')
+    })
+
+    test('works with empty strings', () => {
+        let res = mapString('', c => '1')
+        expect(res).toBe('')
+    })
+
+    test('does not include empty strings into result', () => {
+        let res = mapString('123456', c => Number(c) % 2 === 0 ? '' : c)
+        expect(res).toBe('135')
     })
 })

@@ -28,3 +28,9 @@ export function initcap(s: string): string
  * occur only one time in a row
  */
 export function trimCharSeq(s: string, c: string): string
+
+/**
+ * Executes `fn` callback on each character in a string and joins results
+ * into a new string.
+ */
+export function mapString(s: string, fn: (c: string) => string): string
