@@ -2,7 +2,8 @@
  * Returns the last element in an array
  * If array is empty, returns undefined
  */
-export function last<T>(arr: T[]): T | undefined
+export function last(arr: []): undefined
+export function last<T>(arr: T[]): T
 
 /**
  * Returns the length of a value depending on its type
