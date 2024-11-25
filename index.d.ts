@@ -5,6 +5,12 @@
 export function last<T>(arr: T[]): T | undefined
 
 /**
+ * Normalizes T | T[] to array
+ * If the value is null or undefined, returns an empty array.
+ */
+export function toArray<T>(p: T | T[] | null | undefined): T[]
+
+/**
  * Returns the length of a value depending on its type
  * 
  * - Arrays: the number of elements in an array
