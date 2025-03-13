@@ -12,3 +12,9 @@ export function len(v) {
 
     return 0
 }
+
+
+export function isPrimitive(v) {
+    let t = typeof v
+    return (t !== 'object' && t !== 'function') || v === null
+}

@@ -5,6 +5,21 @@
 export function last(arr: []): undefined
 export function last<T>(arr: T[]): T
 
+
+/*
+ * Returns true if the value is of a primitive type.
+ * Primitive types are:
+ *   - number
+ *   - string
+ *   - Symbol
+ *   - null
+ *   - undefined
+ *   - boolean
+ *   - BigInt
+ */
+export type Primitive = number | string | null | undefined | boolean | symbol | BigInt
+export function isPrimitive(v: any): v is number
+
 /**
  * Normalizes T | T[] to array
  * If the value is null or undefined, returns an empty array.

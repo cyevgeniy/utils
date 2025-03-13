@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { len } from './general'
+import { len, isPrimitive } from './general'
 
 describe('len function', () => {
     test('works with an empty array', {}, () => {
@@ -66,5 +66,55 @@ describe('len function', () => {
 
     test('return 0 for numbers', () => {
         expect(len(null)).toBe(0)
+    })
+})
+
+describe('isPrimitive function', () => {
+    test('true for strings', () => {
+        expect(isPrimitive('test')).toBe(true)
+    })
+
+    test('true for numbers', () => {
+        expect(isPrimitive(12)).toBe(true)
+    })
+
+    test('true for null', () => {
+        expect(isPrimitive(null)).toBe(true)
+    })
+
+    test('true for undefined', () => {
+        expect(isPrimitive(undefined)).toBe(true)
+    })
+
+    test('true for boolean', () => {
+        expect(isPrimitive(false)).toBe(true)
+    })
+
+    test('true for BigInt', () => {
+        expect(isPrimitive(BigInt(123))).toBe(true)
+    })
+
+    test('true for Symbols', () => {
+        expect(isPrimitive(Symbol())).toBe(true)
+    })
+
+    test('false for functions', () => {
+        expect(isPrimitive(() => {})).toBe(false)
+    })
+
+    test('false for objects', () => {
+        expect(isPrimitive({})).toBe(false)
+    })
+
+    test('false for arrays', () => {
+        expect(isPrimitive([1,2])).toBe(false)
+    })
+
+    test('false for maps', () => {
+        expect(isPrimitive(new Map())).toBe(false)
+    })
+
+    test('false for sets', () => {
+        expect(isPrimitive(new Set())).toBe(false)
     })
 })
