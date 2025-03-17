@@ -18,7 +18,7 @@ export function last<T>(arr: T[]): T
  *   - BigInt
  */
 export type Primitive = number | string | null | undefined | boolean | symbol | BigInt
-export function isPrimitive(v: any): v is number
+export function isPrimitive(v: any): v is Primitive
 
 /**
  * Normalizes T | T[] to array
@@ -56,3 +56,9 @@ export function trimCharSeq(s: string, c: string): string
  * into a new string.
  */
 export function mapString(s: string, fn: (c: string) => string): string
+
+/**
+ * Returns a string without the provided suffix and and reports whether
+ * it found the suffix.
+ */
+export function cutSuffix(s: string, suffix: string): [string, boolean]

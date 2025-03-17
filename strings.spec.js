@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { initcap, trimCharSeq, mapString } from './strings'
+import { initcap, trimCharSeq, mapString, cutSuffix } from './strings'
 
 describe('initcap function', () => {
     test('works with empty strings', () => {
@@ -79,5 +79,31 @@ describe('mapString function', () => {
     test('does not include empty strings into result', () => {
         let res = mapString('123456', c => Number(c) % 2 === 0 ? '' : c)
         expect(res).toBe('135')
+    })
+})
+
+describe('cutSuffix works', () => {
+    test('works with empty strings', () => {
+        expect(cutSuffix('', '123')).toStrictEqual(['', false])
+    })
+
+    test('works with string without match', () => {
+        expect(cutSuffix('abcde', '123')).toStrictEqual(['abcde', false])
+    })
+
+    test('works with string with a match', () => {
+        expect(cutSuffix('abcde', 'e')).toStrictEqual(['abcd', true])
+    })
+
+    test('works with empty suffix', () => {
+        expect(cutSuffix('abcde', '')).toStrictEqual(['abcde', true])
+    })
+
+    test('works with spaces', () => {
+        expect(cutSuffix('abcde   ', '  ')).toStrictEqual(['abcde ', true])
+    })
+
+    test('is case-sensitive', () => {
+        expect(cutSuffix('Hello, World!', 'world!')).toStrictEqual(['Hello, World!', false])
     })
 })

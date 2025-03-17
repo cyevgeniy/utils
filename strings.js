@@ -40,3 +40,9 @@ export function trimCharSeq(s, c) {
 export function mapString(s, fn) {
     return s.split('').map(fn).join('')
 }
+
+export function cutSuffix(s, suffix) {
+    let found = s.endsWith(suffix)
+
+    return [found ? s.substring(0, s.lastIndexOf(suffix)) : s, found]
+}

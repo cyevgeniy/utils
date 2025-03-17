@@ -14,9 +14,14 @@
         pre {
             font-size: 0.9rem;
             line-height: 1.4;
-            padding: 0.3rem;
-            background-color: rgb(237, 233, 233);
+            padding: 0.5rem;
+            background-color: rgb(243 243 243);
             border-radius: 0.2rem;
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -63,6 +68,23 @@ let fn = (c) => Number(c) % 2 === 0 ? '' : c
 
 // '135'
 console.log(mapString('12345'))
+</pre>
+
+<h3 id="cutSuffix">cutSuffix</h3>
+
+<p>
+Returns a string without the specified suffix and a result whether this
+suffix was found.
+</p>
+
+<p>
+Example:
+</p>
+
+<pre>
+import { cutSuffix } from 'utils'
+console.log(cutSuffix('Hello, World', ', World') // ['Hello', true]
+console.log(cutSuffix('Hello, World', 'Abcde') // ['Hello, World', false]
 </pre>
 
 <h2>Array functions</h2>
