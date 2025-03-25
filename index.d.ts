@@ -27,6 +27,16 @@ export function isPrimitive(v: any): v is Primitive
 export function toArray<T>(p: T | T[] | null | undefined): T[]
 
 /**
+ * Returns an element in an array by index.
+ * 
+ * @param array Array
+ * @param index An index. If negative, returns element from the end of an array
+ * @param soft A flag that turns on "soft" element search.
+ */
+export function at<T>(array: T[], index: number, soft?: boolean): T | undefined
+
+
+/**
  * Returns the length of a value depending on its type
  * 
  * - Arrays: the number of elements in an array

@@ -102,7 +102,7 @@ console.log(last([1,2,3,4]))
 console.log(last([]))
 </pre>
 
-<h3 id="toAray">toArray</h3> 
+<h3 id="toArray">toArray</h3> 
 
 <p>
 Normalizes a value to an array.
@@ -124,6 +124,54 @@ console.log(toArray([1,2,3]))
 console.log(toArray(null))
 </pre>
 
+
+<h3 id="at">at</h3> 
+<p>Returns an element of an array by index.
+If the index is a negative integer,
+it's counted from the end of an array.
+</p>
+<p>
+It accepts optional third parameter, which allows
+to handle some "out of bounds" situations.
+</p>
+
+<pre>
+import { at } from 'utils'
+
+// 3
+console.log(at([1,2,3], 2))
+
+// undefined
+console.log(at([1,2,3], 10))
+</pre>
+
+<p>
+By default, the function works in "strict"
+mode, what means that it returns <code>undefined</code>
+when the specified index is greater than <code>array.length - 1</code>
+or less than 0.
+</p>
+
+<p>
+When the third parameter is <code>true</code>, the function will
+return the last element in an array if the index is greater
+than <code>array.length-1</code>, and the first element if the index is
+less than 0.
+
+Still, it will return <code>undefined</code> when the array is empty.
+</p>
+
+<pre>
+import { at } from 'utils'
+
+// 3
+console.log(at([1,2,3], 20, true))
+
+// 1
+console.log(at([1,2,3], -2, true))
+</pre>
+
+
 <h2> General functions </h2>
 
 <h3 id="isPrimitive">isPrimitive</h3>
@@ -136,5 +184,6 @@ import { isPrimitive } from 'utils'
 console.log(isPrimitive({})) // false
 console.log(isPrimitive(1)) // true
 </pre>
+
 </body>
 </html>
