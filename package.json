@@ -4,6 +4,7 @@
   "description": "evg's js utils",
   "main": "index.js",
   "scripts": {
+    "docs": "node scripts/build-docs.mjs",
     "test": "vitest"
   },
   "repository": {
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/cyevgeniy/utils#readme",
   "devDependencies": {
+    "acorn": "^8.19.0",
+    "comment-parser": "^1.4.9",
     "vitest": "^2.1.2"
   }
 }

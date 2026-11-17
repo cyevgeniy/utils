@@ -3,11 +3,11 @@ export function last(arr) {
 }
 
 export function toArray(p) {
-    return p
-        ? Array.isArray(p)
+    return p == null
+        ? []
+        : Array.isArray(p)
             ? p
             : [p]
-        : []
 }
 
 export function at(array, index, soft=false) {

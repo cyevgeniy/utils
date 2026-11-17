@@ -3,7 +3,12 @@ import { at, toArray } from './arrays'
 
 describe('toArray function', () => {
     test('works with arrays', () => {
-        expect(toArray([1,2,3])).toStrictEqual([1,2,3])
+        const array = [1,2,3]
+        expect(toArray(array)).toBe(array)
+    })
+
+    test.each([false, 0, -0, '', NaN, 0n])('preserves falsy value %s', value => {
+        expect(toArray(value)).toStrictEqual([value])
     })
 
     test('works with null', () => {
